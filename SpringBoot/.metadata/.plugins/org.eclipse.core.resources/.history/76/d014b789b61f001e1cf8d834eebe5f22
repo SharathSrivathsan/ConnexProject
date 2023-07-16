@@ -1,0 +1,39 @@
+package com.connex.project.services;
+
+import com.connex.project.datamodel.DriverDetails;
+
+public class DriverDetailsService
+{
+	private boolean premiumCalculated = false;
+	private DriverDetails driverDetails = null;
+
+	public DriverDetailsService(DriverDetails details)
+	{
+		this.driverDetails = details;
+	}
+
+    public int getBasePremium()
+    {
+    	//to get base premium from API
+    	return 0;
+    }
+    public String getQuoteReference()
+    {
+    	//generate a random "unique" string 
+    	return null;
+    }
+    public int getFactoredPremium()
+    {
+    	//to calculate premium using factors
+    	this.setPremiumCalculated(true);
+    	return 0;
+    }
+    public boolean isPremiumCalculated()
+    {
+    	return premiumCalculated;
+    }
+    public void setPremiumCalculated(final boolean isPremiumCalculated)
+    {
+    	this.premiumCalculated = isPremiumCalculated;
+    }
+}

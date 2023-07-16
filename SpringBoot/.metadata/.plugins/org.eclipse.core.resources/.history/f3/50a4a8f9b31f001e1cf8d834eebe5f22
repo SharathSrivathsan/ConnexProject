@@ -1,0 +1,24 @@
+package com.connex.project.datamodel;
+
+public class FactorsMapConstants
+{
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_BETWEEN_25_40 = 1;
+	private static double AGE_BETWEEN_40_70 = 0.9;
+	private static double AGE_GREATER_THAN_70 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_LESS_THAN_25 = 1.3;
+	
+}

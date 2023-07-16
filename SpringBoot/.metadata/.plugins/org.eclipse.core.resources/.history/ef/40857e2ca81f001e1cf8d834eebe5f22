@@ -1,0 +1,14 @@
+package com.connex.project.services;
+
+public class DriverDetailsService
+{
+    public int getBasePremium()
+    {
+    	return 0;
+    }
+
+    public String getQuoteReference()
+    {
+    	return null;
+    }
+}

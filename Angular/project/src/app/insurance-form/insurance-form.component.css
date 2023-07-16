@@ -1,0 +1,55 @@
+.vertical-center {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.row {
+  margin: 15px 5px;
+}
+#wrapper {
+  border-radius: 5%;
+  padding: 2%;
+  text-align: left;
+  background-color: floralwhite;
+  width: 37%;
+  margin: 2% 60%;
+}
+
+#quote {
+  display: none;
+  border-radius: 5%;
+  padding: 2%;
+  text-align: center;
+  background-color: floralwhite;
+  width: 37%;
+  margin: 2% 60%;
+}
+#carousel-img {
+  height: 100vh;
+  width: 100%;
+}
+
+nav h3 {
+  color: white;
+  justify-content: center;
+  margin-left: 33%;
+}
+
+button {
+  margin: 5%;
+}
+
+.alert.alert-danger {
+  margin: 0.2% auto;
+  padding: 2%;
+  text-align: center;
+  font-size: small;
+}
+
+#buttons_div {
+  text-align: center;
+}

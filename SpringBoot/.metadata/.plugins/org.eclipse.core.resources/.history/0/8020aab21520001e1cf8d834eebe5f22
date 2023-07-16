@@ -1,0 +1,5 @@
+package com.connex.project.exceptions;
+
+public class UnknownPremiumException {
+
+}

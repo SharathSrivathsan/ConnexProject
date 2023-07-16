@@ -1,0 +1,111 @@
+package com.connex.project.datamodel;
+
+import javax.validation.constraints.Min;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+
+public class DriverDetails
+{
+	@NotNull
+	@Min(value=16, message = "Age cannot be less than 16")
+	@Max(120)
+	@JsonProperty("age")
+	private Integer age;
+
+	@NotNull
+	@Min(0)
+	@Max(100)
+	@JsonProperty("experience")
+	private Integer experience;
+
+	@NotNull
+	@Min(0)
+	@Max(1000)
+	@JsonProperty("record")
+	private Integer record;
+
+	@NotNull
+	@Min(0)
+	@Max(1000)
+	@JsonProperty("claims")
+	private Integer claims;
+
+	@NotNull
+	@Min(0)
+	@Max(9999999)
+	@JsonProperty("car_value")
+	private Long carValue;
+
+	@NotNull
+	@Min(0)
+	@Max(999999)
+	@JsonProperty("car_annual_mileage")
+	private Long carAnnualMileage;
+
+	@NotNull
+	@Min(0)
+	@Max(100)
+	@JsonProperty("insurance_history")
+	private Integer insuranceHistory;
+
+	public Integer getAge()
+	{
+		return age;
+	}
+	public void setAge(final Integer age)
+	{
+		this.age = age;
+	}
+	public Integer getExperience()
+	{
+		return experience;
+	}
+	public void setExperience(final Integer experience)
+	{
+		this.experience = experience;
+	}
+	public Integer getRecord()
+	{
+		return record;
+	}
+	public void setRecord(final Integer record)
+	{
+		this.record = record;
+	}
+	public Integer getClaims()
+	{
+		return claims;
+	}
+	public void setClaims(final Integer claims)
+	{
+		this.claims = claims;
+	}
+	public Long getCarValue()
+	{
+		return carValue;
+	}
+	public void setCarValue(final Long carValue)
+	{
+		this.carValue = carValue;
+	}
+	public Long getCarAnnualMileage()
+	{
+		return carAnnualMileage;
+	}
+	public void setCarAnnualMileage(final Long carAnnualMileage)
+	{
+		this.carAnnualMileage = carAnnualMileage;
+	}
+	public Integer getInsuranceHistory()
+	{
+		return insuranceHistory;
+	}
+	public void setInsuranceHistory(final Integer insuranceHistory)
+	{
+		this.insuranceHistory = insuranceHistory;
+	}
+}

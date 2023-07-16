@@ -1,0 +1,43 @@
+package com.connex.project.datamodel;
+
+public class FactorsMapConstants
+{
+
+	private static double NOT_APPLICABLE = 0;
+
+	private static double AGE_LESS_THAN_25 = 1.3;
+	private static double AGE_BETWEEN_25_40 = 1;
+	private static double AGE_BETWEEN_40_70 = 0.9;
+	private static double AGE_GREATER_THAN_70 = NOT_APPLICABLE;
+
+	private static double EXPERIENCE_LESS_THAN_2 = 1.5;
+	private static double EXPERIENCE_BETWEEN_2_5 = 1.3;
+	private static double EXPERIENCE_BETWEEN_5_10 = 1;
+	private static double EXPERIENCE_GREATER_THAN_10 = 0.9;
+
+	private static double RECORD_0 = 1;
+	private static double RECORD_1 = 1.1;
+	private static double RECORD_2_3 = 1.3;
+	private static double RECORD_GREATER_THAN_3 = NOT_APPLICABLE;
+
+	private static double CLAIMS_0 = 0.9;
+	private static double CLAIMS_1 = 1.2;
+	private static double CLAIMS_2_3 = 1.5;
+	private static double CLAIMS_GREATER_THAN_3 = NOT_APPLICABLE;
+
+	private static double VALUE_LESS_THAN_30K = 0.8;
+	private static double VALUE_BETWEEN_30K_60K = 1;
+	private static double VALUE_BETWEEN_60K_100K = 1.2;
+	private static double VALUE_BETWEEN_100K_150K = 1.5;
+	private static double VALUE_BETWEEN_150K_200K = 2;
+	private static double VALUE_GREATER_THAN_200K = NOT_APPLICABLE;
+	
+	private static double MILEAGE_LESS_THAN_20K = 1.5;
+	private static double MILEAGE_BETWEEN_20K_30K = 1.3;
+	private static double MILEAGE_BETWEEN_30K_50K = 1;
+	private static double MILEAGE_GREATER_THAN_50K = 0.9;
+	
+	private static double HISTORY_0 = 1.5;
+	private static double HISTORY_LESS_THAN_2 = 1.3;
+	private static double HISTORY_GREATER_THAN_2 = 1;
+}

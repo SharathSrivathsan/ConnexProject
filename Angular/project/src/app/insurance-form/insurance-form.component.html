@@ -1,0 +1,172 @@
+<nav class="navbar navbar-dark bg-dark">
+    <h3>Get your Insurance Quote instantly!</h3>
+</nav>
+<div id="wrapper">
+<form [formGroup]="driverDetailsForm" (ngSubmit)="onSubmit()">
+    <div class="row form-group">
+        <div class="col-md-6">
+            <h6><label for="age">Driver Age: </label></h6>
+        </div>
+        <div class="col-md-6">
+            <input maxlength="3" (keypress)="checkInput($event)" class="col-md-10 form-control" id="age" type="text" formControlName="age">
+            <div *ngIf="age.invalid && (age.dirty || age.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="age.errors?.['required']">
+                    Age is required
+                    </div>
+                    <div *ngIf="age.errors?.['max']">
+                        Age cannot be more than 120
+                    </div>
+                    <div *ngIf="age.errors?.['min']">
+                        Age cannot be less than 16
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row form-group">
+        <div class="col-md-6">
+            <h6><label for="experience">Driver's Experience (in years): </label></h6>
+        </div>
+        <div class="col-md-6">
+            <input maxlength="3" (keypress)="checkInput($event)" class="form-control" id="experience" type="text" formControlName="experience">
+            <div *ngIf="experience.invalid && (experience.dirty || experience.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="experience.errors?.['required']">
+                        Driver's Experience is required
+                    </div>
+                    <div *ngIf="experience.errors?.['max']">
+                        Driver's Experience cannot be more than 100
+                    </div>
+                    <div *ngIf="experience.errors?.['min']">
+                        Driver's Experience cannot be less than 0
+                    </div>
+            </div>
+        </div>    
+    </div>
+
+    <div class="row form-group">
+        <div class="col-md-6">
+            <h6><label for="record">At fault traffic violations: </label></h6>
+        </div>
+        <div class="col-md-6">
+            <input maxlength="4" (keypress)="checkInput($event)" class="form-control" id="record" type="text" formControlName="record">
+            <div *ngIf="record.invalid && (record.dirty || record.touched)"
+              class="alert alert-danger">
+                <div *ngIf="record.errors?.['required']">
+                    At fault traffic violations is required
+                </div>
+                <div *ngIf="record.errors?.['max']">
+                    At fault traffic violations cannot be more than 1000
+                </div>
+                <div *ngIf="record.errors?.['min']">
+                    At fault traffic violations cannot be less than 0
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-md-6">
+            <h6><label for="claims">Number of Claims: </label></h6>
+        </div>
+        <div class="col-md-6">
+            <input maxlength="4" (keypress)="checkInput($event)" class="form-control" id="claims" type="text" formControlName="claims">
+            <div *ngIf="claims.invalid && (claims.dirty || claims.touched)"
+                class="alert alert-danger">
+
+                <div *ngIf="claims.errors?.['required']">
+                    Number of Claims is required
+                </div>
+                <div *ngIf="claims.errors?.['max']">
+                    Number of Claims cannot be more than 1000
+                </div>
+                <div *ngIf="claims.errors?.['min']">
+                    Number of Claims cannot be less than 0
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-md-6">
+            <h6><label for="car-value">Car Value (in $): </label></h6>
+        </div>
+        <div class="col-md-6">
+            <input maxlength="7" (keypress)="checkInput($event)" class="form-control" id="car-value" type="text" formControlName="car_value">
+            <div *ngIf="car_value.invalid && (car_value.dirty || car_value.touched)"
+                class="alert alert-danger">
+                <div *ngIf="car_value.errors?.['required']">
+                    Car Value is required
+                </div>
+                <div *ngIf="car_value.errors?.['max']">
+                    Car Value cannot be more than 9999999
+                </div>
+                <div *ngIf="car_value.errors?.['min']">
+                    Car Value cannot be less than 0
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-md-6">
+            <h6><label for="car-annual-mileage">Car Annual Mileage (in Kms): </label></h6>
+        </div>
+        <div class="col-md-6">
+            <input maxlength="6" (keypress)="checkInput($event)" class="form-control" id="car-annual-mileage" type="text" formControlName="car_annual_mileage">
+            <div *ngIf="car_annual_mileage.invalid && (car_annual_mileage.dirty || car_annual_mileage.touched)"
+                class="alert alert-danger">
+                <div *ngIf="car_annual_mileage.errors?.['required']">
+                    Car Annual Mileage is required
+                </div>
+                <div *ngIf="car_annual_mileage.errors?.['max']">
+                    Car Annual Mileage cannot be more than 999999
+                </div>
+                <div *ngIf="car_annual_mileage.errors?.['min']">
+                    Car Annual Mileage cannot be less than 0
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-md-6">
+            <h6><label for="insurance-history">Insurance History (in years): </label></h6>
+        </div>
+        <div class="col-md-6">
+            <input maxlength="3" (keypress)="checkInput($event)" class="form-control" id="insurance-history" type="text" formControlName="insurance_history">
+            <div *ngIf="insurance_history.invalid && (insurance_history.dirty || insurance_history.touched)"
+                class="alert alert-danger">
+                <div *ngIf="insurance_history.errors?.['required']">
+                    Insurance History is required
+                </div>
+                <div *ngIf="insurance_history.errors?.['max']">
+                    Insurance History cannot be more than 100
+                </div>
+                <div *ngIf="insurance_history.errors?.['min']">
+                    Insurance History cannot be less than 0
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="buttons_div">
+        <button class="btn btn-dark" type="submit" [disabled]="!driverDetailsForm.valid">Submit</button>
+        <button class="btn btn-dark" type="button" [disabled]="!(age.dirty || experience.dirty || record.dirty || claims.dirty || car_value.dirty || car_annual_mileage.dirty || insurance_history.dirty)" (click)="resetForm()">Reset</button>
+    </div>    
+</form>
+</div>
+
+<div id="quote">
+    <h4>{{quoteForm.message}}</h4> 
+    <br/>
+    <h5>Your Insurance quote Reference : {{quoteForm.reference}}</h5>
+    <div id="premium_amount">
+        <h5> Total premium for 12 months: ${{quoteForm.premium}}</h5>
+        <h5> Premium for each month: ${{(quoteForm.premium/12).toFixed(2)}} </h5>
+    </div>
+    <button class="btn btn-dark" type="submit" onClick="location.href = '/';">Get another Quote</button>
+    
+</div>

@@ -1,0 +1,54 @@
+package com.connex.project.restservice;
+
+import java.util.concurrent.atomic.AtomicLong;
+
+import org.apache.tomcat.util.json.ParseException;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.connex.project.datamodel.DriverDetails;
+import com.connex.project.datamodel.FactorsMapConstants;
+import com.connex.project.datamodel.Greeting;
+import com.connex.project.datamodel.InsuranceQuote;
+import com.connex.project.exceptions.UnknownPremiumException;
+import com.connex.project.services.DriverDetailsService;
+
+@RestController
+public class RestServiceController
+{
+	private DriverDetailsService driverService = null;
+
+	public DriverDetailsService getDriverService()
+	{
+		return this.driverService;
+	}
+
+	public void initializeDriverService(final DriverDetails driverDetails)
+	{
+		this.driverService = new DriverDetailsService(driverDetails);
+	}
+
+	@PostMapping(value = "/getQuote", consumes = "application/json", produces = "application/json")
+	public InsuranceQuote getQuote(@RequestBody DriverDetails driver) throws ParseException
+	{
+		InsuranceQuote quote = new InsuranceQuote();
+		this.initializeDriverService(driver);
+		try
+		{
+			quote.setPremium(getDriverService().getFactoredPremium());
+			quote.setAvailable(true);
+			quote.setMessage(FactorsMapConstants.PREMIUM_SUCCESS_MSG);
+		}
+		catch(UnknownPremiumException exception)
+		{
+			quote.setAvailable(false);
+			quote.setMessage(exception.getMessage());
+		}
+		quote.setReference(null);
+		
+		return quote;
+	}
+}

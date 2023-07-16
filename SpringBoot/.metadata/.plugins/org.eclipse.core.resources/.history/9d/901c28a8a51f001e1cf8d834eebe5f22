@@ -1,0 +1,16 @@
+package com.connex.project.datamodel;
+
+public class DriverDetails
+{
+	private int age;
+	private int experience;
+	private int record;
+	
+	"age": 32,
+	 "driving_experience": 7,
+	 "driver_record": 1,
+	 "claims": 0,
+	 "car_value": 50000,
+	 "annual_mileage": 25000,
+	 "insurance_history": 3
+}

@@ -1,0 +1,31 @@
+package com.connex.project.services;
+
+public class DriverDetailsService
+{
+	private boolean premiumCalculated = false;
+
+    public int getBasePremium()
+    {
+    	//to get base premium from API
+    	return 0;
+    }
+    public String getQuoteReference()
+    {
+    	//generate a random "unique" string 
+    	return null;
+    }
+    public int getFactoredPremium()
+    {
+    	//to get base premium from API
+    	this.premium
+    	return 0;
+    }
+    public boolean isPremiumCalculated()
+    {
+    	return premiumCalculated;
+    }
+    public void setPremiumCalculated(final boolean isPremiumCalculated)
+    {
+    	this.premiumCalculated = isPremiumCalculated;
+    }
+}

@@ -1,0 +1,94 @@
+package com.connex.project.datamodel;
+
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class DriverDetails
+{
+	@NotNull
+	@JsonProperty("age")
+	private Integer age;
+
+	@NotNull
+	@JsonProperty("experience")
+	private Float experience;
+
+	@NotNull
+	@JsonProperty("record")
+	private Float record;
+
+	@NotNull
+	@JsonProperty("claims")
+	private Integer claims;
+
+	@NotNull
+	@JsonProperty("car_value")
+	private Double carValue;
+
+	@NotNull
+	@JsonProperty("car_annual_mileage")
+	private Long carAnnualMileage;
+
+	@NotNull
+	@JsonProperty("insurance_history")
+	private Integer insuranceHistory;
+
+	public Integer getAge()
+	{
+		return age;
+	}
+	public void setAge(final Integer age)
+	{
+		this.age = age;
+	}
+	public Float getExperience()
+	{
+		return experience;
+	}
+	public void setExperience(final Float experience)
+	{
+		this.experience = experience;
+	}
+	public Float getRecord()
+	{
+		return record;
+	}
+	public void setRecord(final Float record)
+	{
+		this.record = record;
+	}
+	public Integer getClaims()
+	{
+		return claims;
+	}
+	public void setClaims(final Integer claims)
+	{
+		this.claims = claims;
+	}
+	public Double getCarValue()
+	{
+		return carValue;
+	}
+	public void setCarValue(final Double carValue)
+	{
+		this.carValue = carValue;
+	}
+	public Long getCarAnnualMileage()
+	{
+		return carAnnualMileage;
+	}
+	public void setCarAnnualMileage(final Long carAnnualMileage)
+	{
+		this.carAnnualMileage = carAnnualMileage;
+	}
+	public Integer getInsuranceHistory()
+	{
+		return insuranceHistory;
+	}
+	public void setInsuranceHistory(final Integer insuranceHistory)
+	{
+		this.insuranceHistory = insuranceHistory;
+	}
+
+}

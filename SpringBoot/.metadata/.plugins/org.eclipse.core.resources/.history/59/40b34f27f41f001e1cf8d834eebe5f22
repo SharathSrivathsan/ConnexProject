@@ -1,0 +1,50 @@
+package com.connex.project.services;
+
+import org.springframework.web.client.RestTemplate;
+
+import com.connex.project.datamodel.DriverDetails;
+
+public class DriverDetailsService
+{
+	private boolean premiumCalculated = false;
+	private DriverDetails driverDetails = null;
+
+	public DriverDetailsService(DriverDetails details)
+	{
+		this.driverDetails = details;
+	}
+
+	public DriverDetails getDriverDetails()
+	{
+		return this.driverDetails;
+	}
+
+    public int getBasePremium()
+    {
+    	//to get base premium from API
+    	final String uri = "https://storage.googleapis.com/connex-th/insurance_assignment/base_premium.json";
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(uri, String.class);
+    	return 0;
+    }
+    public String getQuoteReference()
+    {
+    	//generate a random "unique" string 
+    	return null;
+    }
+    public int getFactoredPremium()
+    {
+    	//to calculate premium using factors
+    	
+    	this.setPremiumCalculated(true);
+    	return 0;
+    }
+    public boolean isPremiumCalculated()
+    {
+    	return premiumCalculated;
+    }
+    public void setPremiumCalculated(final boolean isPremiumCalculated)
+    {
+    	this.premiumCalculated = isPremiumCalculated;
+    }
+}

@@ -1,0 +1,70 @@
+package com.connex.project.datamodel;
+
+public class DriverDetails
+{
+	private int age;
+	private int experience;
+	private int record;
+	private int claims;
+	private int carValue;
+	private int carAnnualMileage;
+	private int insuranceHistory;
+
+	public int getAge()
+	{
+		return age;
+	}
+	public void setAge(final int age)
+	{
+		this.age = age;
+	}
+	public int getExperience()
+	{
+		return experience;
+	}
+	public void setExperience(final int experience)
+	{
+		this.experience = experience;
+	}
+	public int getRecord()
+	{
+		return record;
+	}
+	public void setRecord(final int record)
+	{
+		this.record = record;
+	}
+	public int getClaims()
+	{
+		return claims;
+	}
+	public void setClaims(final int claims)
+	{
+		this.claims = claims;
+	}
+	public int getCarValue()
+	{
+		return carValue;
+	}
+	public void setCarValue(final int carValue)
+	{
+		this.carValue = carValue;
+	}
+	public int getCarAnnualMileage()
+	{
+		return carAnnualMileage;
+	}
+	public void setCarAnnualMileage(final int carAnnualMileage)
+	{
+		this.carAnnualMileage = carAnnualMileage;
+	}
+	public int getInsuranceHistory()
+	{
+		return insuranceHistory;
+	}
+	public void setInsuranceHistory(final int insuranceHistory)
+	{
+		this.insuranceHistory = insuranceHistory;
+	}
+
+}

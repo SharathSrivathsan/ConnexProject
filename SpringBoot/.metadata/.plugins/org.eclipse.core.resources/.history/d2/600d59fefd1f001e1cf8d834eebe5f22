@@ -1,0 +1,152 @@
+package com.connex.project.services;
+
+import org.json.JSONObject;
+import org.springframework.web.client.RestTemplate;
+
+import com.connex.project.datamodel.DriverDetails;
+import com.connex.project.datamodel.FactorsMapConstants;
+
+public class DriverDetailsService
+{
+	private boolean premiumCalculated = false;
+	private DriverDetails driverDetails = null;
+
+	public DriverDetailsService(DriverDetails details)
+	{
+		this.driverDetails = details;
+	}
+
+	public DriverDetails getDriverDetails()
+	{
+		return this.driverDetails;
+	}
+
+    public Double getBasePremium()
+    {
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(FactorsMapConstants.BASE_PREMIUM_URI, String.class);
+        JSONObject json = new JSONObject(result);
+        return json.getDouble(FactorsMapConstants.BASE_PREMIUM_KEY);
+    }
+    public String getQuoteReference()
+    {
+    	//generate a random "unique" string 
+    	return null;
+    }
+    public int getFactoredPremium()
+    {
+    	//to calculate premium using factors
+    	this.getDriverDetails();
+    	this.setPremiumCalculated(true);
+    	return 0;
+    }
+    public boolean isPremiumCalculated()
+    {
+    	return premiumCalculated;
+    }
+    public void setPremiumCalculated(final boolean isPremiumCalculated)
+    {
+    	this.premiumCalculated = isPremiumCalculated;
+    }
+
+    public Float getOverallFactor()
+    {
+    	
+    	return null;
+    }
+    public Float getAgeFactor()
+    {
+    	Integer age = this.getDriverDetails().getAge();
+    	if(age < 25)
+    		return FactorsMapConstants.AGE_LESS_THAN_25;
+    	else if(age >= 25 && age < 40)
+    		return FactorsMapConstants.AGE_BETWEEN_25_40;
+    	else if(age >= 40 && age < 70)
+    		return FactorsMapConstants.AGE_BETWEEN_40_70;
+    	else
+    		return FactorsMapConstants.AGE_GREATER_THAN_70;
+    }
+
+    public Float getExperienceFactor()
+    {
+    	Float experience = this.getDriverDetails().getExperience();
+    	if(experience < 2)
+    		return FactorsMapConstants.EXPERIENCE_LESS_THAN_2;
+    	else if(experience >= 2 && experience < 5)
+    		return FactorsMapConstants.EXPERIENCE_BETWEEN_2_5;
+    	else if(experience >= 5 && experience < 10)
+    		return FactorsMapConstants.EXPERIENCE_BETWEEN_5_10;
+    	else
+    		return FactorsMapConstants.EXPERIENCE_GREATER_THAN_10;
+    }
+
+    public Float getRecordFactor()
+    {
+    	Float record = this.getDriverDetails().getRecord();
+    	if(record == 0)
+    		return FactorsMapConstants.RECORD_0;
+    	else if(record == 1)
+    		return FactorsMapConstants.RECORD_1;
+    	else if(record == 2 || record == 3)
+    		return FactorsMapConstants.RECORD_2_3;
+    	else if(record > 3)
+    		return FactorsMapConstants.RECORD_GREATER_THAN_3;
+    	return null;
+    }
+
+    public Float getClaimsFactor()
+    {
+    	Float claims = this.getDriverDetails().getRecord();
+    	if(claims == 0)
+    		return FactorsMapConstants.CLAIMS_0;
+    	else if(claims == 1)
+    		return FactorsMapConstants.CLAIMS_1;
+    	else if(claims == 2 || claims == 3)
+    		return FactorsMapConstants.CLAIMS_2_3;
+    	else if(claims > 3)
+    		return FactorsMapConstants.CLAIMS_GREATER_THAN_3;
+    	return null;
+    }
+
+    public Float getValueFactor()
+    {
+    	Double value = this.getDriverDetails().getCarValue();
+    	if(value < 30000)
+    		return FactorsMapConstants.VALUE_LESS_THAN_30K;
+    	else if(value >= 30000 && value < 60000)
+    		return FactorsMapConstants.VALUE_BETWEEN_30K_60K;
+    	else if(value >= 60000 && value < 100000)
+    		return FactorsMapConstants.VALUE_BETWEEN_60K_100K;
+    	else if(value >= 100000 && value < 150000)
+    		return FactorsMapConstants.VALUE_BETWEEN_100K_150K;
+    	else if(value >= 150000 && value < 200000)
+    		return FactorsMapConstants.VALUE_BETWEEN_150K_200K;
+    	else
+    		return FactorsMapConstants.VALUE_GREATER_THAN_200K;
+    }
+
+    public Float getMileageFactor()
+    {
+    	Long mileage = this.getDriverDetails().getCarAnnualMileage();
+    	if(mileage < 20000)
+    		return FactorsMapConstants.MILEAGE_LESS_THAN_20K;
+    	else if(mileage >= 20000 && mileage < 30000)
+    		return FactorsMapConstants.MILEAGE_BETWEEN_20K_30K;
+    	else if(mileage >= 30000 && mileage < 50000)
+    		return FactorsMapConstants.MILEAGE_BETWEEN_30K_50K;
+    	else
+    		return FactorsMapConstants.MILEAGE_GREATER_THAN_50K;
+    }
+
+    public Float getHistoryFactor()
+    {
+    	Integer history = this.getDriverDetails().getInsuranceHistory();
+    	if(history == 0)
+    		return FactorsMapConstants.HISTORY_0;
+    	else if(history < 2)
+    		return FactorsMapConstants.HISTORY_LESS_THAN_2;
+    	else if(history > 2)
+    		return FactorsMapConstants.HISTORY_GREATER_THAN_2;
+    	return null;
+    }
+}

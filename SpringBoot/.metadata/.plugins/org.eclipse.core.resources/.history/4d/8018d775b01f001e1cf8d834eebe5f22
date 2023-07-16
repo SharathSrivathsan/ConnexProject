@@ -1,0 +1,20 @@
+package com.connex.project.services;
+
+public class DriverDetailsService
+{
+    public int getBasePremium()
+    {
+    	//to get base premium from API
+    	return 0;
+    }
+    public String getQuoteReference()
+    {
+    	//generate a random "unique" string 
+    	return null;
+    }
+    public int getFactoredPremium()
+    {
+    	//to get base premium from API
+    	return 0;
+    }
+}

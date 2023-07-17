@@ -7,43 +7,43 @@ import jakarta.validation.constraints.NotNull;
 
 public class DriverDetails
 {
-	@NotNull
+	@NotNull(message="{age.notnull}")
 	@Min(value=16, message="{age.min}")
 	@Max(value=120, message="{age.max}")
 	@JsonProperty("age")
 	private Integer age;
 
-	@NotNull
+	@NotNull(message="{experience.notnull}")
 	@Min(value=0, message="{experience.min}")
 	@Max(value=100, message="{experience.max}")
 	@JsonProperty("experience")
 	private Integer experience;
 
-	@NotNull
+	@NotNull(message="{record.notnull}")
 	@Min(value=0, message="{record.min}")
 	@Max(value=1000, message="{record.max}")
 	@JsonProperty("record")
 	private Integer record;
 
-	@NotNull
+	@NotNull(message="{claims.notnull}")
 	@Min(value=0, message="{claims.min}")
 	@Max(value=1000, message="{claims.max}")
 	@JsonProperty("claims")
 	private Integer claims;
 
-	@NotNull
+	@NotNull(message="{car_value.notnull}")
 	@Min(value=0, message="{carvalue.min}")
 	@Max(value=9999999, message="{carvalue.max}")
 	@JsonProperty("car_value")
 	private Long carValue;
 
-	@NotNull
+	@NotNull(message="{car_annual_mileage.notnull}")
 	@Min(value=0, message="{carmileage.min}")
 	@Max(value=999999, message="{carmileage.max}")
 	@JsonProperty("car_annual_mileage")
 	private Long carAnnualMileage;
 
-	@NotNull
+	@NotNull(message="{insurancehistory.notnull}")
 	@Min(value=0, message="{insurancehistory.min}")
 	@Max(value=100, message="{insurancehistory.max}")
 	@JsonProperty("insurance_history")

@@ -40,7 +40,7 @@ nav h3 {
 }
 
 button {
-  margin: 5%;
+  margin: 2% 8%;
 }
 
 .alert.alert-danger {
@@ -52,4 +52,32 @@ button {
 
 #buttons_div {
   text-align: center;
+}
+
+.bi-clipboard2-fill {
+  margin-left: 2%;
+}
+
+.bi-clipboard2-fill:hover {
+  color: yellowgreen;
+  cursor: pointer;
+}
+
+#copy_notification {
+  display: none;
+  color: #fff;
+  background-color: #333;
+  min-width: 250px;
+  margin-left: -125px;
+  border-radius: 2px;
+  padding: 16px;
+  text-align: center;
+  left: 50%;
+  bottom: 30px;
+  z-index: 1;
+  position: fixed;
+}
+
+#copy_notification.show {
+  display: block;
 }

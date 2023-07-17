@@ -17,6 +17,6 @@ export class InsuranceFormService
     getQuote(form: FormGroup)
     {
         let response = {};
-        return this.http.post<any>(this.rootURL + '/getQuote', form.value);
+        return this.http.post<any>(this.rootURL + '/quote', form.value);
     }
 }

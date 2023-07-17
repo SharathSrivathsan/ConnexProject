@@ -58,7 +58,13 @@ export class InsuranceFormComponent implements OnInit
     {
         return event.charCode >= 48 && event.charCode <= 57;
     }
-
+    copyToClipboard(quote: any)
+    {
+        navigator.clipboard.writeText(quote.reference);
+        let copy_text = document.getElementById("copy_notification");
+        copy_text?.setAttribute("class","show");
+        setTimeout(()=>{ copy_text?.setAttribute("class", "")}, 3000);
+    }
     get age() { return this.driverDetailsForm.get('age')!; }
 
     get experience() { return this.driverDetailsForm.get('experience')!; }

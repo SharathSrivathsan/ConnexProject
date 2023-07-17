@@ -1,6 +1,5 @@
 package com.connex.project.exceptions;
 
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,13 +20,12 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler{
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException exception,
 			HttpHeaders httpHeaders, HttpStatusCode httpStatus, WebRequest webRequest) {
 		Map<String, Object> objectBody = new LinkedHashMap<>();
-		objectBody.put("Current Timestamp", new Date());
 		objectBody.put("Status", httpStatus.value());
 
 		List<String> exceptionalErrors = exception.getBindingResult()
 				.getFieldErrors()
 				.stream()
-				.map(x -> x.getDefaultMessage())
+				.map(field -> field.getDefaultMessage())
 				.collect(Collectors.toList());
 
 		objectBody.put("Errors", exceptionalErrors);

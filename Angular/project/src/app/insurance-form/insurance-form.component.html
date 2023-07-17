@@ -49,20 +49,20 @@
 
     <div class="row form-group">
         <div class="col-md-6">
-            <h6><label for="record">At fault traffic violations: </label></h6>
+            <h6><label for="record">Number of At-fault traffic violations: </label></h6>
         </div>
         <div class="col-md-6">
             <input maxlength="4" (keypress)="checkInput($event)" class="form-control" id="record" type="text" formControlName="record">
             <div *ngIf="record.invalid && (record.dirty || record.touched)"
               class="alert alert-danger">
                 <div *ngIf="record.errors?.['required']">
-                    At fault traffic violations is required
+                    Number of At-fault traffic violations is required
                 </div>
                 <div *ngIf="record.errors?.['max']">
-                    At fault traffic violations cannot be more than 1000
+                    Number of At-fault traffic violations cannot be more than 1000
                 </div>
                 <div *ngIf="record.errors?.['min']">
-                    At fault traffic violations cannot be less than 0
+                    Number of At-fault traffic violations cannot be less than 0
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
 
     <div class="row form-group">
         <div class="col-md-6">
-            <h6><label for="claims">Number of Claims: </label></h6>
+            <h6><label for="claims">Number of Previous Claims: </label></h6>
         </div>
         <div class="col-md-6">
             <input maxlength="4" (keypress)="checkInput($event)" class="form-control" id="claims" type="text" formControlName="claims">
@@ -78,13 +78,13 @@
                 class="alert alert-danger">
 
                 <div *ngIf="claims.errors?.['required']">
-                    Number of Claims is required
+                    Number of Previous Claims is required
                 </div>
                 <div *ngIf="claims.errors?.['max']">
-                    Number of Claims cannot be more than 1000
+                    Number of Previous Claims cannot be more than 1000
                 </div>
                 <div *ngIf="claims.errors?.['min']">
-                    Number of Claims cannot be less than 0
+                    Number of Previous Claims cannot be less than 0
                 </div>
             </div>
         </div>
@@ -162,10 +162,10 @@
 <div id="quote">
     <h4>{{quoteForm.message}}</h4> 
     <br/>
-    <h5>Your Insurance quote Reference : {{quoteForm.reference}}</h5>
+    <label><h5>Your Insurance quote Reference : {{quoteForm.reference}}</h5></label><i (click)="copyToClipboard(quoteForm)" class="bi bi-clipboard2-fill"></i><div id="copy_notification">Copied to clipboard!</div>
     <div id="premium_amount">
-        <h5> Total premium for 12 months: ${{quoteForm.premium}}</h5>
-        <h5> Premium for each month: ${{(quoteForm.premium/12).toFixed(2)}} </h5>
+        <label><h5> Total premium for 12 months: ${{quoteForm.premium}}</h5></label>
+        <label><h5> Premium for each month: ${{(quoteForm.premium/12).toFixed(2)}} </h5></label>
     </div>
     <button class="btn btn-dark" type="submit" onClick="location.href = '/';">Get another Quote</button>
     

@@ -38,7 +38,7 @@ public class RestServiceController
 	}
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@PostMapping(value = "/getQuote", consumes = "application/json", produces = "application/json")
+	@PostMapping(value = "/quote", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<InsuranceQuote> getQuote(@Valid @RequestBody final DriverDetails driver, BindingResult result) throws ParseException
 	{
 		InsuranceQuote quote = new InsuranceQuote();

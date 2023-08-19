@@ -1,4 +1,4 @@
-# ConnexProject
+# VEHICLE INSURANCE QUOTE APPLICATION
 
 Before deploying the application, please make sure that the following toolkits and dependencies have been installed on the system.
 ### SOURCE CODE IS IN MASTER BRANCH ###

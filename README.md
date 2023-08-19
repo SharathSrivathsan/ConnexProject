@@ -1,7 +1,7 @@
 # ConnexProject
 
 Before deploying the application, please make sure that the following toolkits and dependencies have been installed on the system.
-
+### SOURCE CODE IS IN MASTER BRANCH ###
 Requirements and Installation:
   i) Make sure that latest JRE is installed. link: 'https://www.java.com/en/download/manual.jsp'
   ii) Download and install 'Liberica Java JDK (JDK 17)' from 'https://bell-sw.com/pages/downloads/'
